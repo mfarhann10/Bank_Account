@@ -16,59 +16,78 @@ function AccountOperations() {
   function handlePayLoan() {}
 
   return (
-    <div>
-      <h2>Your account operations</h2>
-      <div className="inputs">
-        <div>
-          <label>Deposit</label>
+    <div className="mb-8">
+      <h2 className="text-2xl font-semibold mb-4">Your account operations</h2>
+      <div className="bg-gray-100 p-8 rounded-md shadow-md space-y-6">
+        <div className="flex items-center gap-4">
+          <label className="w-40 font-medium">Deposit</label>
           <input
             type="number"
             value={depositAmount}
             onChange={(e) => setDepositAmount(+e.target.value)}
+            className="flex-1 border border-gray-300 rounded px-3 py-2"
           />
           <select
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
+            className="border border-gray-300 rounded px-3 py-2"
           >
             <option value="USD">US Dollar</option>
             <option value="EUR">Euro</option>
             <option value="GBP">British Pound</option>
           </select>
-
-          <button onClick={handleDeposit}>Deposit {depositAmount}</button>
+          <button
+            onClick={handleDeposit}
+            className="bg-green-500 text-white uppercase font-semibold px-4 py-2 rounded hover:bg-green-600"
+          >
+            Deposit {depositAmount}
+          </button>
         </div>
-
-        <div>
-          <label>Withdraw</label>
+        <div className="flex items-center gap-4">
+          <label className="w-40 font-medium">Withdraw</label>
           <input
             type="number"
             value={withdrawalAmount}
             onChange={(e) => setWithdrawalAmount(+e.target.value)}
+            className="flex-1 border border-gray-300 rounded px-3 py-2"
           />
-          <button onClick={handleWithdrawal}>
+          <button
+            onClick={handleWithdrawal}
+            className="bg-yellow-500 text-white uppercase font-semibold px-4 py-2 rounded hover:bg-yellow-600"
+          >
             Withdraw {withdrawalAmount}
           </button>
         </div>
-
-        <div>
-          <label>Request loan</label>
+        <div className="flex items-center gap-4">
+          <label className="w-40 font-medium">Request loan</label>
           <input
             type="number"
             value={loanAmount}
             onChange={(e) => setLoanAmount(+e.target.value)}
+            className="flex-1 border border-gray-300 rounded px-3 py-2"
             placeholder="Loan amount"
           />
           <input
             value={loanPurpose}
             onChange={(e) => setLoanPurpose(e.target.value)}
+            className="flex-1 border border-gray-300 rounded px-3 py-2"
             placeholder="Loan purpose"
           />
-          <button onClick={handleRequestLoan}>Request loan</button>
+          <button
+            onClick={handleRequestLoan}
+            className="bg-purple-500 text-white uppercase font-semibold px-4 py-2 rounded hover:bg-purple-600"
+          >
+            Request loan
+          </button>
         </div>
-
-        <div>
-          <span>Pay back $X</span>
-          <button onClick={handlePayLoan}>Pay loan</button>
+        <div className="flex items-center gap-4">
+          <span className="flex-1 text-lg font-medium">Pay back $X</span>
+          <button
+            onClick={handlePayLoan}
+            className="bg-red-500 text-white uppercase font-semibold px-4 py-2 rounded hover:bg-red-600"
+          >
+            Pay loan
+          </button>
         </div>
       </div>
     </div>
