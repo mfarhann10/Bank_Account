@@ -9,5 +9,4 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer);
 
-store.dispatch(deposit(500));
-console.log(store.getState());
+export default store;
